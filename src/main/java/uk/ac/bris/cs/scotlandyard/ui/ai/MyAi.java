@@ -34,7 +34,7 @@ public class MyAi implements Ai {
 			for(Piece.Detective detective : detectives)	{
 				Optional<Integer> detectiveLoc = board.getDetectiveLocation(detective);
 				for(Integer node : adjNodes)	{
-					if(detectiveLoc.equals(node))	{
+					if(detectiveLoc.get().equals(node))	{
 						badMove = true;
 					}
 				}
@@ -67,7 +67,7 @@ public class MyAi implements Ai {
 		}
 		return moves;
 	}
-	@Nonnull @Override public String name() { return "Name me!"; }
+	@Nonnull @Override public String name() { return "Caesar"; }
 	private Integer getScore(Board board)	{
 		//DONE look at the destination and see if there are any detectives surrounding this node.
 
