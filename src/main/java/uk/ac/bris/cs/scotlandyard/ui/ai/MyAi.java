@@ -2,7 +2,6 @@ package uk.ac.bris.cs.scotlandyard.ui.ai;
 
 import io.atlassian.fugue.Pair;
 import uk.ac.bris.cs.scotlandyard.model.*;
-import uk.ac.bris.cs.scotlandyard.model.Piece.MrX;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -70,12 +69,13 @@ public class MyAi implements Ai {
 	@Nonnull @Override public String name() { return "Caesar"; }
 	private Integer getScore(Board board)	{
 		//DONE look at the destination and see if there are any detectives surrounding this node.
-
 		// DONE if detective location is one away from moving to destination don't add it.
+		//DONE count number of possible moves from this destination
+		//DONE calculate a score for this: 1 point for each available move, 0 if there is a detective within striking distance.
+		//TODO put in checks so mrX always returns a move if he ca move.
+		//TODO make the detectives advance a move
+		//TODO make scoring function more advanced using dijsktra algorithm and distance to detectives.
 
-		//TODO count number of possible moves from this destination
-		Integer numMoves = countMoves(board);
-		//TODO calculate a score for this: 1 point for each available move, 0 if there is a detective within striking distance.
 		//advanced: implement dijkstra's algorithm and scale deducting points based on distance detectives are away.
 		//advanced: base it on tickets detectives have left and their available moves too.
 
