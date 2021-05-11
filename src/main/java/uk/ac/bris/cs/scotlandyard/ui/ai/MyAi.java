@@ -164,6 +164,7 @@ public class MyAi implements Ai {
 		}
 		return ImmutableSet.copyOf(tempMoves);
 	}
+
 	private Integer getDestination(Move move)	{
 		Integer destination = move.visit(new Move.Visitor<Integer>(){
 			public Integer visit(Move.SingleMove singleMove){
